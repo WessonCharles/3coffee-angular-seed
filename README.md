@@ -1,12 +1,13 @@
-# yo-angular
+# 3coffee-angular-seed
 
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.12.1.
+本人搭建的angular种子项目，由requirejs管理模块
 
-## Build & development
+## build
 
-Run `grunt` for building and `grunt serve` for preview.
+执行gulp就可看到gulp自动化效果
 
-## Testing
+grunt的配置后续将会继续完善
 
-Running `grunt test` will run the unit tests with karma.
+本项目主要是为了对比grunt打包和gulp打包的差异性
+
+
