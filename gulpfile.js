@@ -15,6 +15,7 @@ var rev = require('gulp-rev');
 var revCollector = require('gulp-rev-collector');
 var rjs = require('requirejs');
 var minifyHTML   = require('gulp-minify-html'); //压缩html
+var htmlreplace = require('gulp-html-replace');
 
 
 //脚本检查
@@ -141,10 +142,17 @@ gulp.task('css',['clean','js&css'],function(){
         .pipe(gulp.dest('dest/rev/css')) 
 })
 
+gulp.task('replace',['js','css'],function(){
+  return gulp.src('app/index.html')
+        .pipe(htmlreplace({
+          'require':'min/coanseed.min.js'
+        }))
+        .pipe(gulp.dest('app/'))
+})
 /**
  * 根据生成的mainfest进行替换
  */
-gulp.task('rev',['js','css'],function(){
+gulp.task('rev',['replace'],function(){
     return gulp.src(['dest/rev/**/*.json','app/index.html'])//数组前一个是生成的静态资源文件，后一个是需要修改的html模板
         .pipe(revCollector({
             replaceReved:true,
@@ -162,7 +170,8 @@ gulp.task('rev',['js','css'],function(){
 
 
 
-gulp.task('default', ['clean','build','js&css','js','css','rev']);
+
+gulp.task('default', ['clean','build','js&css','js','css','replace','rev']);
 
 // gulp.task('default', function () {
 //     //监听js变化

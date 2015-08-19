@@ -7,15 +7,10 @@
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!--测试环境-->
-    <link rel="stylesheet" href="libs/angular-material/angular-material.min-507778de44.css">
+    <link rel="stylesheet" href="libs/angular-material/angular-material.min.css">
     <link rel="stylesheet" href="styles/main.css">
   </head>
   <body ng-app="ThCofAngSeed">
-    <!--[if lte IE 8]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-
-    <!-- Add your site or application content here -->
     <div class="header" ng-controller="baseCtrl">
       <div class="navbar navbar-default" role="navigation">
         <div class="container">
@@ -74,13 +69,16 @@
 
         <!--测试环境-->
         <!--<script src="libs/require.js" data-main="scripts/main"></script>-->
-        <!--生产环境-->
-        
+
+        <script src="min/coanseed.min.js"></script>
+      
+  
+
         <!--grunt构建-->
         <!--<script src="build/scripts/coanseed.min-7e38eb0d32.js"></script> -->
         
         <!--gulp构建-->
-        <script src="min/coanseed.min.js"></script>
+        <!--<script src="min/coanseed.min.js"></script>-->
 
 </body>
 </html>
