@@ -187,8 +187,8 @@
   "angular-material/modules/js/whiteframe/12d7dbd0.whiteframe.css": "angular-material/modules/js/whiteframe/12d7dbd0.whiteframe-12d7dbd056.css",
   "angular-material/modules/js/whiteframe/2a5d51d5.whiteframe.min.css": "angular-material/modules/js/whiteframe/2a5d51d5.whiteframe.min-2a5d51d5b3.css",
   "angular/angular-csp.css": "angular/angular-csp-5d7bf1728c.css",
-  "bootstrap/dist/css/5d5357cb.bootstrap.min.css": "bootstrap/dist/css/5d5357cb.bootstrap.min-5d5357cb37.css",
-  "bootstrap/dist/css/659231dd.bootstrap-theme.css": "bootstrap/dist/css/659231dd.bootstrap-theme-659231dde1.css",
-  "bootstrap/dist/css/957474c3.bootstrap.css": "bootstrap/dist/css/957474c3.bootstrap-957474c344.css",
-  "bootstrap/dist/css/bf3499da.bootstrap-theme.min.css": "bootstrap/dist/css/bf3499da.bootstrap-theme.min-bf3499da1c.css"
+  "bootstrap/dist/css/bootstrap-theme.css": "bootstrap/dist/css/bootstrap-theme-659231dde1.css",
+  "bootstrap/dist/css/bootstrap-theme.min.css": "bootstrap/dist/css/bootstrap-theme.min-bf3499da1c.css",
+  "bootstrap/dist/css/bootstrap.css": "bootstrap/dist/css/bootstrap-957474c344.css",
+  "bootstrap/dist/css/bootstrap.min.css": "bootstrap/dist/css/bootstrap.min-5d5357cb37.css"
 }
