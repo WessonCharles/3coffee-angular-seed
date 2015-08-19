@@ -142,17 +142,10 @@ gulp.task('css',['clean','js&css'],function(){
         .pipe(gulp.dest('dest/rev/css')) 
 })
 
-gulp.task('replace',['js','css'],function(){
-  return gulp.src('app/index.html')
-        .pipe(htmlreplace({
-          'require':'min/coanseed.min.js'
-        }))
-        .pipe(gulp.dest('app/'))
-})
 /**
  * 根据生成的mainfest进行替换
  */
-gulp.task('rev',['replace'],function(){
+gulp.task('rev',['js','css'],function(){
     return gulp.src(['dest/rev/**/*.json','app/index.html'])//数组前一个是生成的静态资源文件，后一个是需要修改的html模板
         .pipe(revCollector({
             replaceReved:true,
@@ -161,17 +154,33 @@ gulp.task('rev',['replace'],function(){
             //     'gulp-build/jsmin':'../gulp-build/ress',
             // }
         }))
+        .pipe(gulp.dest('dest/'))//将替换过的文件输出即可，这里输出到原来的路径
+})
+
+gulp.task('replace',['rev'],function(){
+  return gulp.src('dest/index.html')
+        .pipe(htmlreplace({
+          'require':'min/coanseed.min.js'
+        }))
+        .pipe(gulp.dest('dest/'))
+})
+
+gulp.task('revrequire',['replace'],function(){
+  return gulp.src(['dest/rev/**/*.json','dest/index.html'])
+        .pipe(revCollector({
+            replaceReved:true,
+        }))
         .pipe(minifyHTML({//HTML压缩
             empty:true,
             spare:true
         }))
-        .pipe(gulp.dest('dest/'))//将替换过的文件输出即可，这里输出到原来的路径
+        .pipe(gulp.dest('dest/'))
 })
 
 
 
 
-gulp.task('default', ['clean','build','js&css','js','css','replace','rev']);
+gulp.task('default', ['clean','build','js&css','js','css','rev','replace','revrequire']);
 
 // gulp.task('default', function () {
 //     //监听js变化
