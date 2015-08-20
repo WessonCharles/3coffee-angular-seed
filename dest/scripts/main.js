@@ -2,8 +2,8 @@
 
 require.config({
 	paths:{
-		angular:'//cdn.bootcss.com/angular.js/1.4.3/angular.min',
-		// angular:'../libs/angular/angular.min',
+		// angular:'//cdn.bootcss.com/angular.js/1.4.3/angular.min',
+		angular:'../libs/angular/angular.min',
 		jquery:'//cdn.bootcss.com/jquery/2.1.4/jquery.min',
 		// jquery:'../libs/jquery/dist/jquery.min',
 		angularRoute:'../libs/angular-route/angular-route.min',
@@ -21,11 +21,16 @@ require.config({
         'angularAnimate':['angular'],
         'angularAria':['angular'],
         'angularMaterial':['angular','angularAnimate','angularAria'],
-	}
+	},
+	priority: [
+        'angular',
+        'jquery'
+    ]
 })
-
+window.name = "NG_DEFER_BOOTSTRAP!";//必须 、延迟引导、避免发生Failed to instantiate module ThCofAngSeed
 require([
 	'angular',
+	'angularResource',
 	'angularRoute',
 	'angularAnimate',
 	'angularAria',

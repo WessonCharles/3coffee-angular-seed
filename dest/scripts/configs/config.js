@@ -8,5 +8,6 @@
 		    .primaryPalette('cyan')
 		    .accentPalette('red');
 		}])
+		return window.ThCofAngSeedConfig;
 	})
 // }());
