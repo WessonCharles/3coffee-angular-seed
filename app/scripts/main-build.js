@@ -21,7 +21,7 @@ require.config({
         'angularMaterial':['angular','angularAria'],
 	}
 })
-
+window.name = "NG_DEFER_BOOTSTRAP!";
 require([
 	'angular',
 	'angularRoute',
