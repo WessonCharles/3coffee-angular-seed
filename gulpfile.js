@@ -20,7 +20,7 @@ var htmlreplace = require('gulp-html-replace');
 
 //脚本检查
 gulp.task('lint', function () {
-    gulp.src('app/script/**/*.js')
+    gulp.src('app/scripts/**/*.js')
         .pipe(jshint())
         .pipe(jshint.reporter('default'));
 });
@@ -57,24 +57,24 @@ gulp.task('clean',function(){
 // });
 gulp.task('build',['clean'] ,function(cb){//中间的字符串数组，是指当前任务的依赖任务，即 build任务需要再clean任务执行完再执行，以此来实现异步
   rjs.optimize({
-      baseUrl: "app",                     //js根目录
+      baseUrl: "app/scripts",                     //js根目录
 
-      name: 'scripts/main-build',                           //执行的第一个requirejs包
+      name: 'main',                           //执行的第一个requirejs包
 
       optimize: 'uglify',
 
-      mainConfigFile: "app/scripts/main-build.js",                 //requirejs的配置文件 例外：路径相对于项目根目录
+      mainConfigFile: "app/scripts/main.js",                 //requirejs的配置文件 例外：路径相对于项目根目录
 
       removeCombined: true,
       
       paths:{
-        angular:'libs/angular/angular.min',
+        angular:'../libs/angular/angular.min',
         jquery:'empty:',
-        angularRoute:'libs/angular-route/angular-route.min',
-        angularAnimate:'libs/angular-animate/angular-animate.min',
-        angularAria:'libs/angular-aria/angular-aria.min',
+        angularRoute:'../libs/angular-route/angular-route.min',
+        angularAnimate:'../libs/angular-animate/angular-animate.min',
+        angularAria:'../libs/angular-aria/angular-aria.min',
         angularMaterial:'empty:',
-        angularResource:'libs/angular-resource/angular-resource.min'
+        angularResource:'../libs/angular-resource/angular-resource.min'
       },
       shim:{
         'angular' : {'exports' : 'angular'},
@@ -90,7 +90,7 @@ gulp.task('build',['clean'] ,function(cb){//中间的字符串数组，是指当
 
       findNestedDependencies: true,                               //必须指定让requirejs能找到嵌套的文件
 
-      include: ['libs/require.js']
+      include: ['../libs/require.js']
   }, function(buildResponse){
     // console.log('build response', buildResponse);
     cb();
