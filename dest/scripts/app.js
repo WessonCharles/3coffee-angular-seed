@@ -19,6 +19,8 @@ define(["angular",
             clearInterval(time);
           }
         },2000)
+
+        console.log($("a.md-button").offset())
   }])
   return window.ThCofAngSeedModule;
     // .config(function ($routeProvider) {

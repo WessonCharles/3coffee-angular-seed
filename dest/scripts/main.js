@@ -30,6 +30,7 @@ require.config({
 window.name = "NG_DEFER_BOOTSTRAP!";//必须 、延迟引导、避免发生Failed to instantiate module ThCofAngSeed
 require([
 	'angular',
+	'jquery',
 	'angularResource',
 	'angularRoute',
 	'angularAnimate',

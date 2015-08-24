@@ -1,12 +1,10 @@
 // (function(){
 	'use strict';
-	define(["angular"],function(angular){
+	define(["angular","services/more/modal"],function(angular){
 		/*Some bits and pieces Service*//*ËùÓÐÁãËéµÄservice*/
 		var depend = [
-			'services.formDataObject',
-			'services.onRendered',
-			'services.pageNation',
-			'services.loadRespond',
+			'ThCofAngSeed.services.modal',
+			// 'services.formDataObject',
 			/*.....*/
 		];
 		return angular.module('ThCofAngSeed.services',depend);

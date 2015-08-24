@@ -4,11 +4,14 @@
  * Main module of the application.
  */
 define(["angular",
-  "configs/config"],function(angular){
+  "configs/config","services/more/modal","services/service"],function(angular){
   window.ThCofAngSeedModule = angular.module('ThCofAngSeed', [
       'ngRoute',
-      'ThCofAngSeed.configs'
+      'ThCofAngSeed.configs',
+      'ThCofAngSeed.services.modal',
+      'ThCofAngSeed.services'
   ]).controller("baseCtrl",["$scope", "$http","$rootScope", "$location","$timeout", "$filter","$window",
+      
       function($scope,$http,$rootScope,$location,$timeout,$filter,$window){
         $scope.go = 1;
         var time = setInterval(function(){
@@ -19,6 +22,8 @@ define(["angular",
             clearInterval(time);
           }
         },2000)
+
+        console.log($("a.md-button").offset())
   }])
   return window.ThCofAngSeedModule;
     // .config(function ($routeProvider) {

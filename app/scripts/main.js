@@ -11,7 +11,8 @@ require.config({
 		angularAria:'../libs/angular-aria/angular-aria.min',
 		angularMaterial:'//cdn.bootcss.com/angular-material/0.10.1/angular-material.min',
 		// angularMaterial:'../libs/angular-material/angular-material.min',
-		angularResource:'../libs/angular-resource/angular-resource.min'
+		angularResource:'../libs/angular-resource/angular-resource.min',
+		modal:'../libs/custom/modal'
 	},
 	shim:{
 		'angular' : {'exports' : 'angular'},
@@ -21,6 +22,7 @@ require.config({
         'angularAnimate':['angular'],
         'angularAria':['angular'],
         'angularMaterial':['angular','angularAnimate','angularAria'],
+        'modal':{'exports':'modal'}
 	},
 	priority: [
         'angular',
@@ -30,13 +32,17 @@ require.config({
 window.name = "NG_DEFER_BOOTSTRAP!";//必须 、延迟引导、避免发生Failed to instantiate module ThCofAngSeed
 require([
 	'angular',
+	'jquery',
 	'angularResource',
 	'angularRoute',
 	'angularAnimate',
 	'angularAria',
 	'angularMaterial',
+	'modal',
+	// "configs/config",
+	// "services/service",
+	// "services/more/modal",
 	'app',
-	"configs/config"
 	],function(angular){
 		angular.element().ready(function() {
             angular.bootstrap(document, ['ThCofAngSeed']);
