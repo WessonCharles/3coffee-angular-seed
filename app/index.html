@@ -7,117 +7,218 @@
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!--测试环境-->
-    <link rel="stylesheet" href="http://apps.bdimg.com/libs/fontawesome/4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="libs/fontawesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="libs/angular-material/angular-material.min.css">
     <link rel="stylesheet" href="styles/main.css">
   </head>
   <body  ng-controller="baseCtrl">
-    <div class="header">
-      <div class="navbar navbar-default md-whiteframe-z4">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="javascript:void(0)">Brand<div class="ripple-wrapper"></div></a>
-        </div>
-        <div class="navbar-collapse collapse navbar-responsive-collapse">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="javascript:void(0)">Active<div class="ripple-wrapper"></div></a></li>
-                <li><a href="javascript:void(0)">Link<div class="ripple-wrapper"></div></a></li>
-                <li class="dropdown">
-                    <a href="bootstrap-elements.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Dropdown <b class="caret"></b><div class="ripple-wrapper"></div></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="javascript:void(0)">Action</a></li>
-                        <li><a href="javascript:void(0)">Another action</a></li>
-                        <li><a href="javascript:void(0)">Something else here</a></li>
-                        <li class="divider"></li>
-                        <li class="dropdown-header">Dropdown header</li>
-                        <li><a href="javascript:void(0)">Separated link</a></li>
-                        <li><a href="javascript:void(0)">One more separated link</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <form class="navbar-form navbar-left">
-                <input type="text" class="form-control col-lg-8" placeholder="Search">
-            </form>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="javascript:void(0)">Link</a></li>
-                <li class="dropdown">
-                    <a href="bootstrap-elements.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="javascript:void(0)">Action</a></li>
-                        <li><a href="javascript:void(0)">Another action</a></li>
-                        <li><a href="javascript:void(0)">Something else here</a></li>
-                        <li class="divider"></li>
-                        <li><a href="javascript:void(0)">Separated link</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </div>
-                        <img src="images/yeoman.png" alt="">
-
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <div>
-              <a href="/" class="md-button md-default-theme">
-                link
-              </a>
-              <button md-button class="md-raised">
-                <md-icon class="fa fa-cog fa-lg"></md-icon>
-                Setting
-              </button>
-              <button md-button class="md-raised md-primary">
-                <md-icon class="fa fa-trash-o fa-lg"></md-icon>
-                Primary
-              </button>
-              <button md-button ng-disabled="true" class="md-raised md-primary">
-                <md-icon class="fa fa-spinner fa-pulse fa-lg"></md-icon>
-                Disabled
-              </button>
-              <button md-button class="md-raised md-warn">
-                <md-icon class="fa fa-pencil fa-fw fa-lg"></md-icon>
-                Warn
-              </button>
-              <div class="label">Raised</div>
-              <a  data-modal="#modal" class="modal__trigger">Modal 1</a>
-              <!--模态窗口-->
-              <div id="modal" class="modal modal__bg" role="dialog" aria-hidden="true">
-                <div class="modal__dialog">
-                  <div class="modal__content">
-                    <h1>Modal</h1>
-                    <p>人生之路本来是坎坷不平的。绝对一帆风顺的人生是不存在的，人的一生经历艰难曲折是必然的。从古至今，凡是在某一领域有所建树的人，无一不是经历过曲折和磨难的。</p>
-                    
-                    <!-- modal close button -->
-                    <a class="modal__close demo-close">
-                      <i class="fa fa-times"></i>
-                    </a>
+    
+    <div class="main"> 
+      <div id="sidebar" class="shadow-hover">
+          <div class="sidebar-head">
+              <div class="navbar navbar-default">
+                  <div class="navbar-logo">
+                    LightDocker
                   </div>
+              </div>
+          </div>
+          <div class="header-relative"></div>
+          <div class="sidebar-set">
+            <i class="fa fa-bars"></i>
+          </div>
+          <div class="sidebar-ul">
+            <ul>
+              <li class="active">
+                <div class="icon">
+                  <i class="fa fa-dashboard"></i>
                 </div>
-              </div>  
+                <div class="text">
+                  DashBoard
+                </div>
+              </li>
+              <li>
+                <div class="icon">
+                  <i class="fa fa-object-group"></i>
+                </div>
+                <div class="text">项目</div>
+              </li>
+              <li>
+                <div class="icon">
+                  <i class="fa fa-image"></i>
+                </div>
+                <div class="text">镜像</div>
+              </li>
+              <li>
+                <div class="icon">
+                  <i class="fa fa-group"></i>
+                </div>
+                <div class="text">集群</div>
+              </li>
+              <li>
+                <div class="icon">
+                  <i class="fa fa-user"></i>
+                </div>
+                <div class="text">用户</div>
+              </li>
+            </ul>
+          </div> 
+      </div>
+      <div id="content">
+        <div class="header">
+          <div class="navbar navbar-default">
+            <!-- <div class="navbar-header">
+                <a class="navbar-brand" href="javascript:void(0)">Brand<div class="ripple-wrapper"></div></a>
+            </div> -->
+            <div class="navbar-collapse collapse navbar-responsive-collapse">
+                <!-- <ul class="nav navbar-nav">
+                    <li class="active"><a href="javascript:void(0)">Active<div class="ripple-wrapper"></div></a></li>
+                    <li><a href="javascript:void(0)">Link<div class="ripple-wrapper"></div></a></li>
+                    <li class="dropdown">
+                        <a href="bootstrap-elements.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Dropdown <b class="caret"></b><div class="ripple-wrapper"></div></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="javascript:void(0)">Action</a></li>
+                            <li><a href="javascript:void(0)">Another action</a></li>
+                            <li><a href="javascript:void(0)">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li class="dropdown-header">Dropdown header</li>
+                            <li><a href="javascript:void(0)">Separated link</a></li>
+                            <li><a href="javascript:void(0)">One more separated link</a></li>
+                        </ul>
+                    </li>
+                </ul> -->
+                <ul class="nav navbar-nar breadcrumb">
+                    <li><a href="javascript:void(0)">Home</a></li>
+                    <li class="active">Library</li>
+                </ul>
+                <form class="navbar-form navbar-left">
+                    <input type="text" class="form-control col-lg-8" placeholder="Search">
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="javascript:void(0)">Link</a></li>
+                    <li class="dropdown">
+                        <a href="bootstrap-elements.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="javascript:void(0)">Action</a></li>
+                            <li><a href="javascript:void(0)">Another action</a></li>
+                            <li><a href="javascript:void(0)">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li><a href="javascript:void(0)">Separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
-            <a class="navbar-brand" href="#/"  ng-cloak>{{go}}</a>
+          </div>
+        </div>
+         <div class="header-relative"></div> 
+        <div class="inner_content">
+          <div class="button-title">
+            <div layout="row" layout-margin >
+              <div flex flex-order="1" class="noshadow">
+                <button md-button class="md-raised">
+                  <md-icon class="fa fa-cog fa-lg"></md-icon>
+                  Setting
+                </button>
+                <button md-button class="md-raised md-primary">
+                  <md-icon class="fa fa-trash-o fa-lg"></md-icon>
+                  Primary
+                </button>
+                <md-menu>
+                <md-button class="md-raised" aria-label="Open phone interactions menu" ng-click="ctrl.openMenu($mdOpenMenu, $event)">
+                  更多操作
+                  <md-icon md-menu-origin class="fa fa-caret-square-o-down"></md-icon>
+                </md-button>
+                <md-menu-content width="2">
+                  <md-menu-item>
+                    <md-button ng-click="ctrl.redial($event)">
+                      <md-icon md-svg-icon="call:dialpad" md-menu-align-target></md-icon>
+                      Redial
+                    </md-button>
+                  </md-menu-item>
+                  <md-menu-item>
+                    <md-button ng-click="ctrl.checkVoicemail()">
+                      <md-icon md-svg-icon="call:voicemail"></md-icon>
+                      Check voicemail
+                    </md-button>
+                  </md-menu-item>
+                  <md-menu-divider></md-menu-divider>
+                  <md-menu-item>
+                    <md-button ng-click="ctrl.toggleNotifications()">
+                      <md-icon md-svg-icon="social:notifications-{{ctrl.notificationsEnabled ? 'off' : 'on'}}"></md-icon>
+                      {{ctrl.notificationsEnabled ? 'Disable' : 'Enable' }} notifications
+                    </md-button>
+                  </md-menu-item>
+                </md-menu-content>
+              </md-menu>
+              </div>
+            </div>
+          </div>
+          <div class="content-table">
+            <div layout="row" layout-margin>
+              <div flex flex-order="1" class="noshadow" ng-click="toggleSearch=false">
+                    <md-table headers="headers" content="content" sortable="sortable" filters="search" custom-class="custom" thumbs="thumbs" count="count"></md-table>
+              </div>
+            </div>
+          </div>
           
-          <ul class="pagination">
-              <li class="disabled"><a href="javascript:void(0)">«</a></li>
-              <li class="active"><a href="javascript:void(0)">1</a></li>
-              <li><a href="javascript:void(0)">2</a></li>
-              <li><a href="javascript:void(0)">3</a></li>
-              <li><a href="javascript:void(0)">4</a></li>
-              <li><a href="javascript:void(0)">5</a></li>
-              <li><a href="javascript:void(0)">»</a></li>
-          </ul>
+          <img src="images/yeoman.png" alt="">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div>
+            <a href="/" class="md-button md-default-theme">
+              link
+            </a>
+            <button md-button class="md-raised">
+              <md-icon class="fa fa-cog fa-lg"></md-icon>
+              Setting
+            </button>
+            <button md-button class="md-raised md-primary">
+              <md-icon class="fa fa-trash-o fa-lg"></md-icon>
+              Primary
+            </button>
+            <button md-button ng-disabled="true" class="md-raised md-primary">
+              <md-icon class="fa fa-spinner fa-pulse fa-lg"></md-icon>
+              Disabled
+            </button>
+            <button md-button class="md-raised md-warn">
+              <md-icon class="fa fa-pencil fa-fw fa-lg"></md-icon>
+              Warn
+            </button>
+            <div class="label">Raised</div>
+            <a  data-modal="#modal" class="modal__trigger">Modal 1</a>
+            <!--模态窗口-->
+            <div id="modal" class="modal modal__bg" role="dialog" aria-hidden="true">
+              <div class="modal__dialog">
+                <div class="modal__content">
+                  <h1>Modal</h1>
+                  <p>人生之路本来是坎坷不平的。绝对一帆风顺的人生是不存在的，人的一生经历艰难曲折是必然的。从古至今，凡是在某一领域有所建树的人，无一不是经历过曲折和磨难的。</p>
+                  
+                  <!-- modal close button -->
+                  <a class="modal__close demo-close">
+                    <i class="fa fa-times"></i>
+                  </a>
+                </div>
+              </div>
+            </div>  
+          </div>
+          <a class="navbar-brand" href="#/"  ng-cloak>{{go}}</a>
+        
+        <div layout="row" layout-margin layout-fill layout-padding>
+          <div flex class="md-raised md-pink md-button md-default-theme">I'm on the left, and there's an empty area around me.</div>
+          <div flex class="md-raised md-grey md-button md-default-theme">I'm on the left, and there's an empty area around me.</div>
+          <div flex class="md-raised md-light-blue md-button md-default-theme">I'm on the left, and there's an empty area around me.</div>
+          <div flex class="md-raised md-amber md-button md-default-theme">I'm on the right, and there's an empty area around me.</div>
+        </div>
 
-    <div layout="row" layout-margin layout-fill layout-padding>
-      <div flex class="md-raised md-pink md-button md-default-theme">I'm on the left, and there's an empty area around me.</div>
-      <div flex class="md-raised md-grey md-button md-default-theme">I'm on the left, and there's an empty area around me.</div>
-      <div flex class="md-raised md-light-blue md-button md-default-theme">I'm on the left, and there's an empty area around me.</div>
-      <div flex class="md-raised md-amber md-button md-default-theme">I'm on the right, and there's an empty area around me.</div>
-    </div>
-    <div class="container">
+        </div>
+      </div>
+    </div>  
+    <!-- <div class="container">
     <div ng-view=""></div>
-    </div>
+    </div> -->
 
     <div class="footer">
       <div class="container">
@@ -153,3 +254,65 @@
 
 </body>
 </html>
+<div id="md-table-template" ng-hide="true">
+  <table md-colresize="md-colresize" class="md-table">
+    <thead>
+      <tr class="md-table-headers-row">
+        <th ng-repeat="h in headers" class="md-table-header">
+          <a href="#" ng-if="handleSort(h.field)" ng-click="reverse=!reverse;order(h.field,reverse)">{{h.name}} 
+            <i ng-show="reverse && h.field == predicate"  class="fa fa-sort-desc"></i>
+            <i ng-show="!reverse && h.field == predicate" class="fa fa-unsorted"></i>
+          </a>
+          <span ng-if="!handleSort(h.field)">{{h.name}}</span></th>
+        <th class="md-table-header"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="c in content | filter:filters | startFrom:tablePage*count | limitTo: count" class="md-table-content-row">
+        <td>
+          <div ng-repeat="h in headers" ng-if="h.field == thumbs" class="md-table-thumbs">
+            <div style="background-image:url({{c.thumb}})"></div>
+          </div>
+        </td>
+        <td ng-repeat="h in headers" ng-class="customClass[h.field]" ng-if="h.field != thumbs" class="md-table-content">{{(h.field.indexOf('date') > 0) ? $filter('date')(c[h.field]) : c[h.field];}}</td>
+        <td class="md-table-td-more">
+          <md-button class="md-mini md-button md-icon-button" aria-label="Info"><i class="fa fa-ellipsis-v"></i></md-button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div layout="row" class="md-table-footer">
+    <span class="md-table-count-info">Rows per page : 
+      <a href="#" ng-click="goToPage(0); count=10">10</a>,
+      <a href="#" ng-click="goToPage(0); count=25">25</a>,
+      <a href="#" ng-click="goToPage(0); count=50">50</a>,
+      <a href="#" ng-click="goToPage(0); count=100">100</a>
+      (current is {{count}})
+    </span>
+    <span flex="flex" class="noshadow"></span>
+    <span ng-show="nbOfPages() > 1">
+     <!--  <md-button ng-disabled="tablePage==0" ng-click="tablePage=tablePage-1" aria-label="Previous Page" class="md-primary md-hue-2">
+      <i style="font-size:16px;" class="ion-chevron-left"></i>
+    </md-button>
+      <a href="#" ng-repeat="i in getNumber(nbOfPages()) track by $index">
+        <md-button ng-click="goToPage($index)" class="md-primary md-hue-2 md-table-footer-item">
+          <span ng-class="{ 'md-table-active-page': tablePage==$index}">{{$index+1}}</span>
+        </md-button>
+      </a>
+      <md-button ng-disabled="tablePage==nbOfPages()-1" ng-click="tablePage=tablePage+1" aria-label="Next Page" class="md-primary md-hue-2">
+      <i style="font-size:16px;" class="ion-chevron-right"></i>
+    </md-button>
+ -->    <ul class="pagination">
+        <li ng-disabled="tablePage==0" ng-click="tablePage=tablePage-1" aria-label="Previous Page">
+          <a class="md-button" href="javascript:void(0)">«</a>
+        </li>
+        <li ng-repeat="i in getNumber(nbOfPages()) track by $index" ng-class="{ 'active': tablePage==$index}">
+          <a ng-click="goToPage($index)" class="md-button" ng-class="{'md-primary md-raised':tablePage==$index}" href="javascript:void(0)">
+            {{$index+1}}
+          </a>
+        </li>
+        <li ng-disabled="tablePage==nbOfPages()-1" ng-click="tablePage=tablePage+1" aria-label="Next Page"><a class="md-button" href="javascript:void(0)">»</a></li>
+    </ul>
+    </span>
+  </div>
+</div>

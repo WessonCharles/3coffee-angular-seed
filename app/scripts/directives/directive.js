@@ -1,15 +1,10 @@
-// (function(){
-	'use strict';
-	define(["angular"],function(angular){
-		/*Some bits and pieces Directives*//*所有零碎的directive*/
-		var depend = [
-			'directives.abnTree',
-			'directives.onRendered',
-			'directives.pageNation',
-			'directives.loadRespond',
-			/*.....*/
-		];
-		return angular.module('ThCofAngSeed.directives',depend);
-	})
-	
-// }());
+'use strict';
+define(["angular"],function(angular){
+	/*Some bits and pieces Directives*//*所有零碎的directive*/
+	var depend = [
+		'ThCofAngSeed.directives.table',
+		/*.....*/
+	];
+	return angular.module('ThCofAngSeed.directives',depend);
+})
+

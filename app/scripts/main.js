@@ -12,7 +12,8 @@ require.config({
 		angularMaterial:'//cdn.bootcss.com/angular-material/0.10.1/angular-material.min',
 		// angularMaterial:'../libs/angular-material/angular-material.min',
 		angularResource:'../libs/angular-resource/angular-resource.min',
-		modal:'../libs/custom/modal'
+		modal:'../libs/custom/modal',
+		colresize:'../libs/colresize/colresize'
 	},
 	shim:{
 		'angular' : {'exports' : 'angular'},
@@ -22,7 +23,8 @@ require.config({
         'angularAnimate':['angular'],
         'angularAria':['angular'],
         'angularMaterial':['angular','angularAnimate','angularAria'],
-        'modal':{'exports':'modal'}
+        'modal':{'exports':'modal'},
+        'colresize':['jquery']
 	},
 	priority: [
         'angular',
@@ -39,6 +41,7 @@ require([
 	'angularAria',
 	'angularMaterial',
 	'modal',
+	'colresize',
 	// "configs/config",
 	// "services/service",
 	// "services/more/modal",
