@@ -34,7 +34,7 @@ define(['angular'],function(angular){
           $scope.tablePage = page;
         };
       },
-      template: angular.element(document.querySelector('#md-table-template')).html()
+      templateUrl:'module/table-template.html'// angular.element(document.querySelector('#md-table-template')).html()
     }
   })
   .directive('mdColresize', function ($timeout) {

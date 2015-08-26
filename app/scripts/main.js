@@ -13,7 +13,8 @@ require.config({
 		// angularMaterial:'../libs/angular-material/angular-material.min',
 		angularResource:'../libs/angular-resource/angular-resource.min',
 		modal:'../libs/custom/modal',
-		colresize:'../libs/colresize/colresize'
+		colresize:'../libs/colresize/colresize',
+		modernizr:'../libs/custom/modernizr.custom',
 	},
 	shim:{
 		'angular' : {'exports' : 'angular'},
@@ -24,6 +25,7 @@ require.config({
         'angularAria':['angular'],
         'angularMaterial':['angular','angularAnimate','angularAria'],
         'modal':{'exports':'modal'},
+        'modernizr':{'exports':'modal'},
         'colresize':['jquery']
 	},
 	priority: [
@@ -41,10 +43,12 @@ require([
 	'angularAria',
 	'angularMaterial',
 	'modal',
+	'modernizr',
 	'colresize',
 	// "configs/config",
 	// "services/service",
 	// "services/more/modal",
+	'../module/app_project/router',
 	'app',
 	],function(angular){
 		angular.element().ready(function() {
